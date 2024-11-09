@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum CodersAdvanced Password Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Advanced Password Generator</h1>
+    <h2>Select Password Length</h2>
+    <input type="number" id="passwordLength" value="12" min="8" max="32" />
+
+    <!-- Password Options -->
+    <div class="options">
+        <label><input type="checkbox" id="useLowercase" checked /> Lowercase Characters</label>
+        <label><input type="checkbox" id="useUppercase" checked /> Uppercase Characters</label>
+        <label><input type="checkbox" id="useNumbers" checked /> Numbers</label>
+        <label><input type="checkbox" id="useSymbols" checked /> Symbols</label>
+        <label><input type="checkbox" id="excludeSimilar" /> Exclude Similar Characters (i, l, 1, L, o, 0, O)</label>
+        <label><input type="checkbox" id="excludeAmbiguous" /> Exclude Ambiguous Characters ({ } [ ] ( ) / \ ' " ` ~ , ; : . < >)</label>
+    </div>
+
+    <button onclick="generatePassword()">Generate Password</button>
+    <input type="text" id="passwordOutput" readonly placeholder="Generated Password" />
+    <button onclick="copyToClipboard()" id="copyButton">Copy to Clipboard</button>
+
+    <!-- Blog Section -->
+    <div class="blog">
+        <h3>How Secure is My Password?</h3>
+        <p>Your password’s security depends on its length and complexity. Avoid common words or patterns, and use a combination of uppercase, lowercase, numbers, and symbols. Longer passwords with complex characters are significantly harder to guess or crack, offering you better protection.</p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Created by ❤️ Quantum coders</p>
+    </footer>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
